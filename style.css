@@ -1,0 +1,14 @@
+:root {
+	--dark-1: #0c0a12;
+	--dark-2: #1a1627;
+	--dark-3: #2a233e;
+	--dark-4: #393055;
+	--text-color: #ebe8f7;
+	--good-text: #67e494;
+	--bad-text: #d55d89;
+}
+
+body {
+	background-color: var(--dark-1);
+	color: var(--text-color);
+}
