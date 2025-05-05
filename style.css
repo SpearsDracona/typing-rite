@@ -1,7 +1,7 @@
 :root {
 	--dark-1: #101e1c;
-	--dark-2: #152a23;
-	--dark-3: #254333;
+	--dark-2: #122720;
+	--dark-3: #224030;
 	--dark-4: #557a58;
 	--text-color: #d6eac4;
 	--text-muted: #a2bd93;
@@ -20,14 +20,31 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	color: var(--text-color);
-	font-family: sans-serif;
-	font-size: 1rem;
+	font-family: "Barlow", sans-serif;
+	font-weight: 500;
+	font-size: 1.1rem;
 	display: flex;
 	flex-direction: column;
 }
 
 h1 {
 	color: var(--text-color);
+	margin-top: 1rem;
+	padding: 0.5rem;
+	margin-bottom: 0;
+	font-family: "Cinzel Decorative", serif;
+	font-weight: 600;
+}
+
+.instructions {
+	line-height: 1.5;
+}
+
+.divider {
+	height: 1px;
+	padding: 0;
+	margin: 0;
+	background: linear-gradient(to right, var(--dark-3), var(--dark-4), var(--dark-3));
 }
 
 #game-screen {
@@ -42,17 +59,17 @@ h1 {
 header {
 	background-color: var(--dark-3);
 	border: 1px solid var(--dark-4);
-	border-radius: 2rem;
+	border-radius: 1rem;
 	text-align: center;
 	padding: 1.5rem;
-	padding-top: .5rem;
+	padding-top: 0rem;
 	padding-bottom: .5rem;
 }
 
 main {
 	background-color: var(--dark-3);
 	border: 1px solid var(--dark-4);
-	border-radius: 2rem;
+	border-radius: 1rem;
 	padding: 1.5rem;
 	display: flex;
 	flex-direction: column;
@@ -69,11 +86,11 @@ main {
 .stats {
 	display: flex;
 	justify-content: space-between;
-	width: 95%;
+	width: 98%;
 	margin: auto;
 	padding-bottom: 0.5rem;
 	color: var(--text-muted);
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .instructions {
@@ -85,8 +102,11 @@ main {
 	flex-shrink: 0;
 }
 
+
+
 #text-display {
-	font-family: monospace;
+	font-family: "Fira Code", monospace;
+	font-weight: 400;
 	font-size: 1rem;
 	background-color: var(--dark-2);
 	width: 100%;
@@ -96,12 +116,13 @@ main {
 	overflow: hidden;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 	border: 1px solid var(--dark-1);
 }
 
 #text-input {
-	font-family: monospace;
+	font-family: "Fira Code", monospace;
+	font-weight: 400;
 	font-size: 1rem;
 	width: 100%;
 	margin: auto;
@@ -109,9 +130,11 @@ main {
 	background-color: var(--dark-2);
 	color: var(--text-color);
 	border: 1px solid var(--dark-4);
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 	margin-top: 0.5rem;
 	padding: 0.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 
 #text-input:hover, #text-input:focus {
@@ -130,7 +153,7 @@ body::before {
 	z-index: -1;
 	background: url("clouds.png") repeat, url("clouds2.png") repeat;
 	pointer-events: none;
-	animation: cloudsMove 30s linear infinite;
+	animation: cloudsMove 20s linear infinite;
 }
 
 @keyframes cloudsMove {
