@@ -8,7 +8,30 @@
 	</head>
 	<body>
 		<script src="game.js"></script>
-		<h1>Typing Rite</h1>
-		<p>Coming soon...</p>
+		<div id="game-screen">
+		
+			<header>
+				<h1>Typing Rite - Lesson 1</h1>
+				<p class="instructions">Type the following text as accurately and quickly as you can. Hit enter to finish a line and go to the next.</p>
+			</header>
+			
+			<div class="spacer"></div>
+			
+			<main>
+				<div class="stats">
+					<span>Time: 00:23</span>
+					<span>WPM: 62</span>
+					<span>Accuracy: 94%</span>
+				</div>
+				<div id="text-display">
+					<p class="current-line"><span class="correct">asdf jkl; asdf jkl</span><span class="incorrect">;</span> asdf</p>
+					<p class="upcoming-line">alaska has a flag</p>
+					<p class="upcoming-line">dad had alfalfa salad</p>
+				</div>
+				<input type="text" id="text-input" autocomplete="off" spellcheck="false" value="asdf jkl; asdf jklm" />
+				
+			</main>
+			
+		</div>
 	</body>
 </html>
