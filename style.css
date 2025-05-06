@@ -15,64 +15,105 @@ html, body {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	
 	background-color: var(--dark-1);
 	background: radial-gradient(ellipse, var(--dark-3) 0%, var(--dark-2) 50%, black 100%);
 	background-size: cover;
 	background-repeat: no-repeat;
+	
 	color: var(--text-color);
 	font-family: "Barlow", sans-serif;
 	font-weight: 500;
 	font-size: 1.1rem;
+}
+
+#game-screen {
 	display: flex;
 	flex-direction: column;
+	
+	width: 90%;
+	max-width: 800px;
+	margin: auto;
+	padding: 1rem;
+}
+
+header {
+	padding: 0 1.5rem 0.5rem 1.5rem;
+	border: 1px solid var(--dark-4);
+	border-radius: 1rem;
+	
+	background-color: var(--dark-3);
+	
+	text-align: center;
 }
 
 h1 {
-	color: var(--text-color);
-	margin-top: 1rem;
+	margin: 1rem auto 0 auto;
 	padding: 0.5rem;
-	margin-bottom: 0;
+	
+	color: var(--text-color);
 	font-family: "Cinzel Decorative", serif;
 	font-weight: 600;
-}
-
-.instructions {
-	line-height: 1.5;
 }
 
 .divider {
 	height: 1px;
 	padding: 0;
 	margin: 0;
+	
 	background: linear-gradient(to right, var(--dark-3), var(--dark-4), var(--dark-3));
 }
 
-#game-screen {
-	width: 90%;
-	max-width: 800px;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
+.instructions {
+	line-height: 1.5;
+	color: var(--text-muted);
 }
 
-header {
-	background-color: var(--dark-3);
-	border: 1px solid var(--dark-4);
-	border-radius: 1rem;
-	text-align: center;
-	padding: 1.5rem;
-	padding-top: 0rem;
-	padding-bottom: .5rem;
+.spacer {
+	height: 2rem;
+	flex-shrink: 0;
 }
 
 main {
-	background-color: var(--dark-3);
+	display: flex;
+	flex-direction: column;
+	
 	border: 1px solid var(--dark-4);
 	border-radius: 1rem;
 	padding: 1.5rem;
+	
+	background-color: var(--dark-3);
+}
+
+.stats {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
+	width: 98%;
+	margin: auto;
+	padding-bottom: 0.5rem;
+	
+	color: var(--text-muted);
+	font-weight: 500;
+}
+
+#text-display {
+	width: 100%;
+	margin: auto;
+	height: 200px;
+	box-sizing: border-box;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid var(--dark-1);
+	
+	background-color: var(--dark-2);
+	
+	font-family: "Fira Code", monospace;
+	font-weight: 400;
+	font-size: 1rem;
+	
+	overflow: hidden;
 }
 
 .correct {
@@ -83,58 +124,23 @@ main {
 	color: var(--bad-text);
 }
 
-.stats {
-	display: flex;
-	justify-content: space-between;
-	width: 98%;
-	margin: auto;
-	padding-bottom: 0.5rem;
-	color: var(--text-muted);
-	font-weight: 500;
-}
-
-.instructions {
-	color: var(--text-muted);
-}
-
-.spacer {
-	height: 2rem;
-	flex-shrink: 0;
-}
-
-
-
-#text-display {
-	font-family: "Fira Code", monospace;
-	font-weight: 400;
-	font-size: 1rem;
-	background-color: var(--dark-2);
-	width: 100%;
-	margin: auto;
-	height: 200px;
-	box-sizing: border-box;
-	overflow: hidden;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	border-radius: 0.5rem;
-	border: 1px solid var(--dark-1);
-}
-
 #text-input {
-	font-family: "Fira Code", monospace;
-	font-weight: 400;
-	font-size: 1rem;
 	width: 100%;
 	margin: auto;
+	margin-top: 0.5rem;
 	box-sizing: border-box;
-	background-color: var(--dark-2);
-	color: var(--text-color);
 	border: 1px solid var(--dark-4);
 	border-radius: 0.5rem;
-	margin-top: 0.5rem;
-	padding: 0.5rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding: 0.5rem 1rem;
+	
+	background-color: var(--dark-2);
+	
+	font-family: "Fira Code", monospace;
+	font-weight: 400;
+	font-size: 1rem;
+	color: var(--text-color);
+	
+	caret-color: var(--text-color);
 }
 
 #text-input:hover, #text-input:focus {
@@ -142,17 +148,17 @@ main {
 	outline: none;
 }
 
-#text-input {
-	caret-color: var(--text-color);
-}
-
+/* Animated background */
 body::before {
 	content: "";
 	position: fixed;
 	inset: 0;
 	z-index: -1;
-	background: url("clouds.png") repeat, url("clouds2.png") repeat;
+	
 	pointer-events: none;
+	
+	background: url("clouds.png") repeat, url("clouds2.png") repeat;
+	
 	animation: cloudsMove 20s linear infinite;
 }
 
