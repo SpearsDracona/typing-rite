@@ -37,6 +37,37 @@ body {
 	max-width: 800px;
 	margin: auto;
 	padding: 1rem;
+	
+}
+
+#title-screen {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	max-width: 800px;
+	margin: auto;
+	text-align: center;
+	
+}
+
+.screen {
+	
+	opacity: 1 !important;
+	transition: opacity 1s ease, visibility 1s ease !important;
+}
+
+.invisible {
+	opacity: 0 !important;
+	visibility: hidden;
+}
+
+.show {
+	opacity: 1 !important;
+	visibility: visible;
 }
 
 header {
